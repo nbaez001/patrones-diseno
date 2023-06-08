@@ -10,5 +10,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>cp-singleton</module>
+		<module>cp-factory</module>
 	</modules>
 </project>
