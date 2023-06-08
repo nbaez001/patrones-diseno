@@ -11,5 +11,6 @@
 	<modules>
 		<module>cp-singleton</module>
 		<module>cp-factory</module>
+		<module>cp-abstract-factory</module>
 	</modules>
 </project>
