@@ -1,8 +1,8 @@
 package com.empresa.proyecto.factory;
 
 import com.empresa.proyecto.inter.IShape;
-import com.empresa.proyecto.inter.impl.Rectangle;
-import com.empresa.proyecto.inter.impl.Square;
+import com.empresa.proyecto.inter.model.Rectangle;
+import com.empresa.proyecto.inter.model.Square;
 
 public class ShapeFactory extends AbstractFactory {
 

@@ -1,4 +1,4 @@
-package com.empresa.proyecto.inter.impl;
+package com.empresa.proyecto.inter.model;
 
 import com.empresa.proyecto.inter.IShape;
 

@@ -1,8 +1,8 @@
 package com.empresa.proyecto.factory;
 
 import com.empresa.proyecto.inter.IShape;
-import com.empresa.proyecto.inter.impl.RoundedRectangle;
-import com.empresa.proyecto.inter.impl.RoundedSquare;
+import com.empresa.proyecto.inter.model.RoundedRectangle;
+import com.empresa.proyecto.inter.model.RoundedSquare;
 
 public class RoundedShapeFactory extends AbstractFactory {
 	
