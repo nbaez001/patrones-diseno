@@ -5,7 +5,7 @@ import com.empresa.proyecto.inter.model.Comprobante;
 
 public class BoletaFactory extends ComprobanteFactory {
     @Override
-    public Comprobante createComprobante(String number, String date, double amount) {
-        return new Boleta(number, date, amount);
+    public Comprobante crearComprobante(String numero, String fecha, double monto) {
+        return new Boleta(numero, fecha, monto);
     }
 }

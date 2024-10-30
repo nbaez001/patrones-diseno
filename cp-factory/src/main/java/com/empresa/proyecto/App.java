@@ -19,13 +19,13 @@ public class App {
     }
 
     public void generateComprobante(String number, String date, double amount) {
-        Comprobante comprobante = comprobanteFactory.createComprobante(number, date, amount);
-        comprobante.printComprobante();
+        Comprobante comprobante = comprobanteFactory.crearComprobante(number, date, amount);
+        comprobante.imprimirComprobante();
     }
 
     public static void main(String[] args) {
         App app = new App();
-        app.initialize("Boleta");
+        app.initialize("Factura");
         app.generateComprobante("001", "01-10-2024", 500.00);
     }
 }

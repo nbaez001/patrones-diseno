@@ -12,17 +12,16 @@ public class Factura implements Comprobante {
     }
 
     @Override
-    public void printComprobante() {
+    public void imprimirComprobante() {
         System.out.println("Factura Comprobante");
         System.out.println("Number: " + number);
         System.out.println("Date: " + date);
         System.out.println("Amount: " + amount);
-        System.out.println("Tax: " + calculateTax());
+        System.out.println("Tax: " + calcularImpuesto());
     }
 
     @Override
-    public double calculateTax() {
-        // Factura has a higher tax, e.g., 18%
+    public double calcularImpuesto() {
         return amount * 0.18;
     }
 }

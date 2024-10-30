@@ -1,28 +1,27 @@
 package com.empresa.proyecto.inter.model;
 
 public class Boleta implements Comprobante {
-    private String number;
-    private String date;
-    private double amount;
+    private String numero;
+    private String fecha;
+    private double monto;
 
-    public Boleta(String number, String date, double amount) {
-        this.number = number;
-        this.date = date;
-        this.amount = amount;
+    public Boleta(String numero, String fecha, double monto) {
+        this.numero = numero;
+        this.fecha = fecha;
+        this.monto = monto;
     }
 
     @Override
-    public void printComprobante() {
+    public void imprimirComprobante() {
         System.out.println("Boleta Comprobante");
-        System.out.println("Number: " + number);
-        System.out.println("Date: " + date);
-        System.out.println("Amount: " + amount);
-        System.out.println("Tax: " + calculateTax());
+        System.out.println("Number: " + numero);
+        System.out.println("Date: " + fecha);
+        System.out.println("Amount: " + monto);
+        System.out.println("Tax: " + calcularImpuesto());
     }
 
     @Override
-    public double calculateTax() {
-        // Boleta has a lower tax, e.g., 8%
-        return amount * 0.08;
+    public double calcularImpuesto() {
+        return monto * 0.08;
     }
 }

@@ -1,23 +1,35 @@
 package com.empresa.proyecto;
 
-import com.empresa.proyecto.factory.AbstractFactory;
-import com.empresa.proyecto.inter.IShape;
-import com.empresa.proyecto.producer.FactoryProducer;
+import com.empresa.proyecto.inter.factory.PayPalFactory;
+import com.empresa.proyecto.inter.factory.PlataformaPagoFactory;
+import com.empresa.proyecto.inter.factory.TarjetaCreditoFactory;
+import com.empresa.proyecto.inter.model.ProcesadorPago;
+import com.empresa.proyecto.inter.model.ValidacionPago;
 
 public class App {
 
-	public static void main(String[] args) {
-		AbstractFactory shapeFactory = FactoryProducer.getFactory(false);
-		IShape shape1 = shapeFactory.getShape("RECTANGLE");
-		shape1.draw();
-		IShape shape2 = shapeFactory.getShape("SQUARE");
-		shape2.draw();
+    public static void main(String[] args) {
+        String metodoPago = "TarjetaCredito";
+        String datosPago = "1234567812345678";
+        double monto = 100.0;
 
-		// Rounded
-		AbstractFactory shapeFactory1 = FactoryProducer.getFactory(true);
-		IShape shape3 = shapeFactory1.getShape("RECTANGLE");
-		shape3.draw();
-		IShape shape4 = shapeFactory1.getShape("SQUARE");
-		shape4.draw();
-	}
+        PlataformaPagoFactory factory;
+
+        if (metodoPago.equals("TarjetaCredito")) {
+            factory = new TarjetaCreditoFactory();
+        } else if (metodoPago.equals("PayPal")) {
+            factory = new PayPalFactory();
+        } else {
+            throw new IllegalArgumentException("Método de pago desconocido.");
+        }
+
+        ProcesadorPago procesador = factory.crearProcesadorPago();
+        ValidacionPago validacion = factory.crearValidacionPago();
+
+        if (validacion.validar(datosPago)) {
+            procesador.procesarPago(monto);
+        } else {
+            System.out.println("Validación fallida. No se puede procesar el pago.");
+        }
+    }
 }

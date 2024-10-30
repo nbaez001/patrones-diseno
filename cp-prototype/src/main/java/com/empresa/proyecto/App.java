@@ -1,33 +1,44 @@
 package com.empresa.proyecto;
 
-import com.empresa.proyecto.cache.ShapeCache;
-import com.empresa.proyecto.inter.Circle;
-import com.empresa.proyecto.inter.Shape;
+import com.empresa.proyecto.inter.Tarjeta;
+import com.empresa.proyecto.inter.TarjetaCredito;
+import com.empresa.proyecto.inter.TarjetaDebito;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
-	public static void main(String[] args) {
-		ShapeCache.loadCache();
+    public void businessLogic() {
+        List<Tarjeta> tarjetas = new ArrayList<>();
 
-		Shape clonedShape = (Shape) ShapeCache.getShape("1");
-		System.out.println("Shape : " + clonedShape.getType());
+        TarjetaCredito tarjetaCredito = new TarjetaCredito();
+        tarjetaCredito.setTitular("Juan Pérez");
+        tarjetaCredito.setNumero("1234-5678-9876-5432");
+        tarjetaCredito.setFechaExpiracion("12/25");
+        tarjetaCredito.setLimiteCredito(10000);
+        tarjetas.add(tarjetaCredito);
 
-		Shape clonedShape2 = (Shape) ShapeCache.getShape("2");
-		System.out.println("Shape : " + clonedShape2.getType());
+        TarjetaDebito tarjetaDebito = new TarjetaDebito();
+        tarjetaDebito.setTitular("Ana Gómez");
+        tarjetaDebito.setNumero("8765-4321-1234-5678");
+        tarjetaDebito.setFechaExpiracion("08/24");
+        tarjetaDebito.setSaldoDisponible(5000);
+        tarjetas.add(tarjetaDebito);
 
-		Shape clonedShape3 = (Shape) ShapeCache.getShape("3");
-		System.out.println("Shape : " + clonedShape3.getType());
+        List<Tarjeta> tarjetasCopia = new ArrayList<>();
+        for (Tarjeta tarjeta : tarjetas) {
+            tarjetasCopia.add(tarjeta);
+            tarjetasCopia.add(tarjeta.clonar());
+        }
 
-		// Example withou cache
-		Circle circle = new Circle();
-		circle.setId("1");
-		System.out.println("Shape : " + circle.getType());
+        for (Tarjeta tarjeta : tarjetasCopia) {
+            tarjeta.mostrarInformacion();
+            System.out.println("---------------------------");
+        }
+    }
 
-		Circle circle2 = (Circle) circle.clone();
-		System.out.println("Shape : " + circle2.getType());
-
-		Circle circle3 = circle;
-
-		System.out.println(circle == circle2);
-		System.out.println(circle == circle3);
-	}
+    public static void main(String[] args) {
+        App app = new App();
+        app.businessLogic();
+    }
 }

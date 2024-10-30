@@ -7,7 +7,7 @@ public class Conexion {
 
 	}
 
-	public static Conexion getInstancia() {
+	public static Conexion obtenerInstancia() {
 		if (instancia == null) {
 			instancia = new Conexion();
 		}

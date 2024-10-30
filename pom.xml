@@ -13,5 +13,10 @@
 		<module>cp-factory</module>
 		<module>cp-abstract-factory</module>
 		<module>cp-prototype</module>
-	</modules>
+        <module>cp-builder</module>
+        <module>ep-adapter</module>
+        <module>ep-bridge</module>
+        <module>ep-composite</module>
+        <module>ep-decorator</module>
+    </modules>
 </project>
