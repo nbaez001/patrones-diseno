@@ -18,5 +18,8 @@
         <module>ep-bridge</module>
         <module>ep-composite</module>
         <module>ep-decorator</module>
+        <module>ep-facade</module>
+        <module>ep-flyweight</module>
+        <module>ep-proxy</module>
     </modules>
 </project>
