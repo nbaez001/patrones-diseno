@@ -21,5 +21,7 @@
         <module>ep-facade</module>
         <module>ep-flyweight</module>
         <module>ep-proxy</module>
+        <module>bp-chain-responsability</module>
+        <module>bp-command</module>
     </modules>
 </project>
