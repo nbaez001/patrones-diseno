@@ -6,15 +6,15 @@ import com.empresa.proyecto.originator.Originator;
 import java.util.Stack;
 
 public class Caretaker {
-    private final Stack<Memento> mementos = new Stack<>();
+    private final Stack<Memento> history = new Stack<>();
 
     public void save(Originator originator) {
-        mementos.push(originator.save());
+        history.push(originator.save());
     }
 
     public void undo() {
-        if (!mementos.isEmpty()) {
-            mementos.pop().restore();
+        if (!history.isEmpty()) {
+            history.pop().restore();
         }
     }
 }
