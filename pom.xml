@@ -23,5 +23,8 @@
         <module>ep-proxy</module>
         <module>bp-chain-responsability</module>
         <module>bp-command</module>
+        <module>bp-iterator</module>
+        <module>bp-mediator</module>
+        <module>bp-memento</module>
     </modules>
 </project>
