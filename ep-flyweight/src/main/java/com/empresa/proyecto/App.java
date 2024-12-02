@@ -8,10 +8,9 @@ public class App {
 
         // Agregar caracteres con formato compartido utilizando el patrón Flyweight
         documento.agregarCaracter('H', 0, 0, "Arial", 12, true);
-        documento.agregarCaracter('e', 10, 0, "Arial", 12, true);
+        documento.agregarCaracter('o', 10, 0, "Arial", 12, true);
         documento.agregarCaracter('l', 20, 0, "Arial", 12, true);
-        documento.agregarCaracter('l', 30, 0, "Arial", 12, true);
-        documento.agregarCaracter('o', 40, 0, "Arial", 12, true);
+        documento.agregarCaracter('a', 30, 0, "Arial", 12, true);
 
         // Agregar una línea con un formato diferente
         documento.agregarCaracter('M', 0, 20, "Times New Roman", 14, false);

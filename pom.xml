@@ -26,5 +26,6 @@
         <module>bp-iterator</module>
         <module>bp-mediator</module>
         <module>bp-memento</module>
+        <module>bp-observer</module>
     </modules>
 </project>
